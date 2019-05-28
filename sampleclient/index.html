@@ -5,12 +5,60 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Address Book</title>
+
+		<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js"></script>
+		<link
+			href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css"
+			rel="stylesheet"
+		/>
+
 		<script src="js/addressBook.js" type="application/javascript"></script>
 		<link href="css/style.css" rel="stylesheet" />
 	</head>
 	<body>
 		<h1>Address Book</h1>
-
+		<button onclick="toggleAddDialog(true)">Add Entry</button>
+		<div id="addEntry">
+			<div id="entryForm">
+				<form id="entryFormForm">
+					<div>
+						<label for="first">First Name:</label>
+						<input type="text" name="first" />
+					</div>
+					<div>
+						<label for="last">Last Name:</label>
+						<input type="text" name="last" />
+					</div>
+					<div>
+						<label for="phone">Phone Number:</label>
+						<input type="text" name="phone" />
+					</div>
+					<div>
+						<label for="street">Street Address:</label>
+						<input type="text" name="street" />
+					</div>
+					<div>
+						<label for="city">City/Town:</label>
+						<input type="text" name="city" />
+					</div>
+					<div>
+						<label for="province">Province/State:</label>
+						<input type="text" name="province" />
+					</div>
+					<div>
+						<label for="country">Country:</label>
+						<input type="text" name="country" />
+					</div>
+					<div>
+						<label for="postal">Postal/Zip Code:</label>
+						<input type="text" name="postal" />
+					</div>
+				</form>
+				<button id="btnEntryFormAdd">Add</button>
+				<button onclick="toggleAddDialog(false)">Cancel</button>
+			</div>
+		</div>
 		<div id="people"></div>
+		<div id="map"></div>
 	</body>
 </html>
