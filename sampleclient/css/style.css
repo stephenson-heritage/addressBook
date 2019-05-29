@@ -33,6 +33,11 @@ h1 {
 	right: 0;
 	width: 30vw;
 	height: 40vh;
+
+	border: 0 solid rgb(10, 25, 35);
+	border-top-width: 3px;
+	border-left-width: 3px;
+	border-radius: 3px;
 }
 
 .person {

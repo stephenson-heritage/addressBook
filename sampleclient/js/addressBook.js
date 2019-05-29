@@ -26,7 +26,11 @@ const initMap = container => {
 const entryClick = (map, el) => {
 	//console.log(el.dataset["lat"], el.dataset["lng"], el.id);
 	if (el.dataset["lat"] !== undefined && el.dataset["lng"] !== undefined) {
-		map.easeTo({ center: [el.dataset["lng"], el.dataset["lat"]] });
+		map.flyTo({
+			center: [el.dataset["lng"], el.dataset["lat"]],
+			speed: 0.7,
+			curve: 1.2
+		});
 	}
 };
 
@@ -43,6 +47,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 	let markers = [];
 
 	const mapEl = document.getElementById("map");
+
+	mapEl.addEventListener("mouseenter", () => {
+		mapEl.style.width = "90vw";
+		mapEl.style.height = "80vh";
+		map.resize();
+	});
+
+	mapEl.addEventListener("mouseleave", () => {
+		mapEl.style.width = "30vw";
+		mapEl.style.height = "40vh";
+		map.resize();
+	});
 
 	btnAddEntryEl.addEventListener("click", async () => {
 		let formEls = document.querySelectorAll(
