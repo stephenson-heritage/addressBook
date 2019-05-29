@@ -7,6 +7,23 @@ h1 {
 	padding: 3px 5px;
 }
 
+.delete {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+}
+
+#loading {
+	position: fixed;
+	top: 2px;
+	right: 2px;
+	display: none;
+}
+
+#loading > img {
+	width: 38px;
+}
+
 #addEntry {
 	position: fixed;
 	top: 0;
@@ -43,6 +60,7 @@ h1 {
 .person {
 	cursor: pointer;
 	padding: 5px;
+	position: relative;
 }
 
 .phone {
